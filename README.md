@@ -30,8 +30,8 @@ There are no accounts, analytics, advertisements, cloud uploads, or remote code.
 - Friendly handling for restricted Chrome pages and capture limits
 
 ## Screenshots
+<img width="436" height="439" alt="image" src="https://github.com/user-attachments/assets/1c289864-7a0a-41a6-a951-481352822f0f" />
 
-Store screenshots will be added before the public Chrome Web Store launch.
 
 ## Install locally
 
