@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "SnapSave",
+  "version": "1.0.0",
+  "description": "Capture anything. Save anywhere. Fast, private webpage screenshots and PDFs.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads",
+    "clipboardWrite"
+  ],
+  "background": { "service_worker": "assets/background.js", "type": "module" },
+  "action": {
+    "default_title": "SnapSave",
+    "default_popup": "src/popup/index.html",
+    "default_icon": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" }
+  },
+  "icons": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "options_page": "src/options/index.html",
+  "commands": {
+    "capture-visible": { "suggested_key": { "default": "Alt+Shift+S" }, "description": "Capture the visible page" },
+    "select-area": { "suggested_key": { "default": "Alt+Shift+A" }, "description": "Select an area to capture" }
+  },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}
