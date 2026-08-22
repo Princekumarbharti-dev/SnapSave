@@ -37,7 +37,7 @@ async function capture(mode: string) {
 function renderPreview() {
   if (!result) return home();
   app.innerHTML = `<section class="app preview"><header class="preview-head"><div class="brand">${logo}<h1>SnapSave</h1></div><span style="font-size:11px;color:#798197">Ready</span></header><div class="preview-box"><img alt="Screenshot preview"></div><div class="meta">${result.width.toLocaleString()} Ã— ${result.height.toLocaleString()} px</div><div class="formats" role="group" aria-label="Export format">${['png','jpeg','pdf'].map(item => `<button class="format ${format === item ? 'active' : ''}" data-format="${item}">${item === 'jpeg' ? 'JPG' : item.toUpperCase()}</button>`).join('')}</div><div class="actions"><button class="action secondary" id="copy">Copy</button><button class="action primary" id="download">Download</button></div><button class="again" id="again">â† Capture again</button></section>`;
-  document.querySelector<HTMLImageElement>('img')!.src = result.dataUrl;
+  document.querySelector<HTMLImageElement>('.preview-box img')!.src = result.dataUrl;
   document.querySelectorAll<HTMLButtonElement>('[data-format]').forEach(button => button.onclick = () => { format = button.dataset.format as typeof format; renderPreview(); });
   document.querySelector<HTMLButtonElement>('#again')!.onclick = home;
   document.querySelector<HTMLButtonElement>('#copy')!.onclick = () => void copy();
@@ -58,3 +58,4 @@ async function download() {
 }
 
 void (async () => { if (new URLSearchParams(location.search).has('preview')) { loading('Preparing previewâ€¦'); const response = await chrome.runtime.sendMessage({ type: 'GET_LAST_CAPTURE' }); result = response?.result; format = (await getSettings()).format; renderPreview(); } else home(); })();
+
