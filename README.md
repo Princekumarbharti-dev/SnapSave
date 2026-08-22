@@ -30,7 +30,9 @@ There are no accounts, analytics, advertisements, cloud uploads, or remote code.
 - Friendly handling for restricted Chrome pages and capture limits
 
 ## Screenshots
-<img width="436" height="439" alt="image" src="https://github.com/user-attachments/assets/1c289864-7a0a-41a6-a951-481352822f0f" />
+<img width="381" height="442" alt="image" src="https://github.com/user-attachments/assets/e93864c3-11d4-4791-8737-e394ca6e9458" />
+
+<img width="379" height="550" alt="image" src="https://github.com/user-attachments/assets/b79797df-6be0-428e-9256-0668b8352a94" />
 
 
 ## Install locally
